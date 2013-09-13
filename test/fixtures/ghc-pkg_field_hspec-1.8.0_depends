@@ -1,0 +1,11 @@
+depends: HUnit-1.2.5.2-6e02ecc15e3cc5ab8ef10df50d05a1a9
+         QuickCheck-2.6-e3d91fa60fe4dc52527aa32bae8a1855
+         ansi-terminal-0.6-0cc945db2421314246a07a2e8bf2b9e1
+         base-4.6.0.1-8aa5d403c45ea59dcd2c39f123e27d57
+         deepseq-1.3.0.1-5cc4cd89bdc2e8f6db1833d95ec36926
+         hspec-expectations-0.3.3-f85e589f253a8bb99c26b7858c848762
+         quickcheck-io-0.1.0-b0c4a570aaa710f7bea185ac9ecbfa21
+         random-1.0.1.1-43fdc5da991685d8a0ec8cb553880cf8
+         setenv-0.1.0-d1ddcd411e438fe2cb5b2cf34dbe3f78
+         time-1.4.0.1-10dc4804a19dc0000fab79908f1a9f50
+         transformers-0.3.0.0-ff2bb6ac67241ebb987351a3db564af0
