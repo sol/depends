@@ -4,19 +4,22 @@ import           Control.Applicative
 import           Data.List
 import           Data.Char
 import           Data.Ord
-import           GhcPkg
 import           Data.Map (Map)
 import qualified Data.Map as Map
 import           Control.Monad.State
+
+import           Config
+import           GhcPkg
+import qualified Cabal
 
 type Cache = Map Package [Package]
 
 run :: IO ()
 run = do
-  input <- readFile "dependencies"
-  packages <- mapM latest (lines input)
+  (name, deps) <- load "dependencies.yaml"
+  packages <- mapM latest deps
   r <- execStateT (mapM_ transitiveDependencies packages) Map.empty
-  mapM_ (putStrLn . showPackage) (sortByPackageName . Map.keys $ r)
+  writeFile (name ++ ".cabal") (Cabal.format name (sortByPackageName . Map.keys $ r))
   where
     sortByPackageName :: [Package] -> [Package]
     sortByPackageName = sortBy (comparing (map toLower . packageName))

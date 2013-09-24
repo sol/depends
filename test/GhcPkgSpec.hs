@@ -1,9 +1,7 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 module GhcPkgSpec (main, spec) where
 
-import           Test.Hspec
-import           Test.QuickCheck
-import           Control.Applicative
+import           Helper
 
 import           Data.Version hiding (parseVersion)
 import           GhcPkg
@@ -16,9 +14,6 @@ instance Arbitrary Package where
 
 main :: IO ()
 main = hspec spec
-
-package :: String -> Package
-package xs = let Just p = parsePackage xs in p
 
 spec :: Spec
 spec = do
