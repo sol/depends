@@ -1,0 +1,6 @@
+name: foo
+main:
+  - text
+  - filepath
+  - bytestring
+  - transformers
