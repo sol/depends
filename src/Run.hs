@@ -16,11 +16,14 @@ type Cache = Map Package [Package]
 
 run :: IO ()
 run = do
-  (name, deps) <- load "dependencies.yaml"
-  packages <- mapM latest deps
-  r <- execStateT (mapM_ transitiveDependencies packages) Map.empty
-  writeFile (name ++ ".cabal") (Cabal.format name (sortByPackageName . Map.keys $ r))
+  (name, mainDeps, testDeps) <- load "dependencies.yaml"
+  mainPackages <- mapM latest mainDeps
+  testPackages <- mapM latest testDeps
+  m <- execStateT (mapM_ transitiveDependencies mainPackages) Map.empty
+  t <- execStateT (mapM_ transitiveDependencies testPackages) m
+  writeFile (name ++ ".cabal") (Cabal.format name (keys m) (keys t))
   where
+    keys = sortByPackageName . Map.keys
     sortByPackageName :: [Package] -> [Package]
     sortByPackageName = sortBy (comparing (map toLower . packageName))
 

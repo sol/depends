@@ -16,7 +16,7 @@ spec = do
         , "filepath"
         , "bytestring"
         , "transformers"
-        ])
+        ], [])
 
     context "when YAML file does not specify name" $ do
       it "uses directory name as name" $ do
@@ -25,4 +25,13 @@ spec = do
           , "filepath"
           , "bytestring"
           , "transformers"
-          ])
+          ], [])
+
+    context "when YAML file contains test section" $ do
+      it "uses directory name as name" $ do
+        load "test/fixtures/dependencies-with-test.yaml" `shouldReturn` ("depends", [
+            "text"
+          , "filepath"
+          , "bytestring"
+          , "transformers"
+          ], ["hspec", "silently"])

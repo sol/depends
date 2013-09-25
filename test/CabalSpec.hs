@@ -14,9 +14,13 @@ spec = do
       format "foo" [
           package "base-4.6.0.1"
         , package "bytestring-0.10.0.2"
-        , package "containers-0.5.0.0"
-        , package "transformers-0.3.0.0"
-        ] `shouldBe` unlines [
+        ] [
+          package "base-4.6.0.1"
+        , package "bytestring-0.10.0.2"
+        , package "hspec-1.7.3"
+        , package "QuickCheck-2.6"
+        ]
+        `shouldBe` unlines [
           "name: foo"
         , "version: 0.0.0"
         , "build-type: Simple"
@@ -29,6 +33,15 @@ spec = do
         , "  build-depends:"
         , "      base == 4.6.0.1"
         , "    , bytestring == 0.10.0.2"
-        , "    , containers == 0.5.0.0"
-        , "    , transformers == 0.3.0.0"
+        , ""
+        , "test-suite spec"
+        , "  type: exitcode-stdio-1.0"
+        , "  ghc-options: -Wall -Werror"
+        , "  hs-source-dirs: src, test"
+        , "  main-is: Spec.hs"
+        , "  build-depends:"
+        , "      base == 4.6.0.1"
+        , "    , bytestring == 0.10.0.2"
+        , "    , hspec == 1.7.3"
+        , "    , QuickCheck == 2.6"
         ]

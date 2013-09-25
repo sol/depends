@@ -1,0 +1,9 @@
+main:
+  - text
+  - filepath
+  - bytestring
+  - transformers
+
+test:
+  - hspec
+  - silently
