@@ -7,7 +7,11 @@ import GhcPkg
 
 format :: String -> [Package] -> [Package] -> String
 format name mainDeps testDeps = unlines [
-    "name: " ++ name
+    "-- NOTE:"
+  , "--"
+  , "-- This file was generated dependencies.yaml.  To regenerate it run `depends`."
+  , "--"
+  , "name: " ++ name
   , "version: 0.0.0"
   , "build-type: Simple"
   , "cabal-version: >= 1.8"

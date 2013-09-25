@@ -21,7 +21,11 @@ spec = do
         , package "QuickCheck-2.6"
         ]
         `shouldBe` unlines [
-          "name: foo"
+          "-- NOTE:"
+        , "--"
+        , "-- This file was generated dependencies.yaml.  To regenerate it run `depends`."
+        , "--"
+        , "name: foo"
         , "version: 0.0.0"
         , "build-type: Simple"
         , "cabal-version: >= 1.8"
