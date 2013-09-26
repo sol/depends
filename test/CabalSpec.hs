@@ -23,7 +23,8 @@ spec = do
         `shouldBe` unlines [
           "-- NOTE:"
         , "--"
-        , "-- This file was generated dependencies.yaml.  To regenerate it run `depends`."
+        , "-- This file was generated from dependencies.yaml.  To regenerate it run"
+        , "-- `depends`."
         , "--"
         , "name: foo"
         , "version: 0.0.0"

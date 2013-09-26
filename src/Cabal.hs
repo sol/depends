@@ -9,7 +9,8 @@ format :: String -> [Package] -> [Package] -> String
 format name mainDeps testDeps = unlines [
     "-- NOTE:"
   , "--"
-  , "-- This file was generated dependencies.yaml.  To regenerate it run `depends`."
+  , "-- This file was generated from dependencies.yaml.  To regenerate it run"
+  , "-- `depends`."
   , "--"
   , "name: " ++ name
   , "version: 0.0.0"
