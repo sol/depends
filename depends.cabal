@@ -1,5 +1,5 @@
 name:             depends
-version:          0.0.0
+version:          0.0.1
 license:          MIT
 license-file:     LICENSE
 copyright:        (c) 2013 Simon Hengel
@@ -23,6 +23,11 @@ executable depends
       src
   main-is:
       Main.hs
+  other-modules:
+      GhcPkg
+      Cabal
+      Run
+      Config
   build-depends:
       base    == 4.*
     , process
