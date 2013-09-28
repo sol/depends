@@ -23,11 +23,11 @@ format name mainDeps testDeps = unlines [
   , "  main-is: Main.hs"
   ] ++ builDepends mainDeps ++ unlines [
     ""
-  , "test-suite spec"
+  , "test-suite test"
   , "  type: exitcode-stdio-1.0"
   , "  ghc-options: -Wall -Werror"
-  , "  hs-source-dirs: src, test"
-  , "  main-is: Spec.hs"
+  , "  hs-source-dirs: test, src"
+  , "  main-is: Main.hs"
   ] ++ builDepends testDeps
   where
     builDepends deps
