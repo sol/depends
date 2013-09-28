@@ -6,7 +6,8 @@ import           Data.Char
 import           Data.Ord
 import           Data.Map (Map)
 import qualified Data.Map as Map
-import           Control.Monad.State
+import           Control.Monad.Trans.State
+import           Control.Monad.IO.Class
 
 import           Config
 import           GhcPkg

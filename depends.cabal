@@ -19,10 +19,10 @@ executable depends
       base    == 4.*
     , process
     , containers
-    , mtl
+    , transformers
     , filepath
     , directory
-    , yaml-config
+    , yaml-config >= 0.2.0
 
 test-suite spec
   type:
@@ -37,7 +37,7 @@ test-suite spec
       base    == 4.*
     , process
     , containers
-    , mtl
+    , transformers
     , filepath
     , directory
     , yaml-config
