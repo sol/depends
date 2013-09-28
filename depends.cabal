@@ -7,6 +7,14 @@ author:           Simon Hengel <sol@typeful.net>
 maintainer:       Simon Hengel <sol@typeful.net>
 build-type:       Simple
 cabal-version:    >= 1.8
+category:         Distribution
+synopsis:         A simple configuration management tool for Haskell
+description:      A simple configuration management tool for Haskell that uses
+                  convention over configuration.
+
+source-repository head
+  type: git
+  location: https://github.com/sol/depends
 
 executable depends
   ghc-options:

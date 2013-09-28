@@ -1,2 +1,2 @@
-A simple configuration management tool for Haskell that follows coding by
-convention.
+A simple configuration management tool for Haskell that uses convention over
+configuration.
